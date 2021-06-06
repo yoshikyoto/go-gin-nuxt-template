@@ -1,0 +1,14 @@
+# For IntelliJ IDEA
+.idea
+
+# For Git
+.git
+
+# For VsCode
+.vscode
+__debug_bin
+
+# For Go
+gin-bin
+apply-api
+vendor
