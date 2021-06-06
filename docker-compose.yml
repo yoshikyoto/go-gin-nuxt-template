@@ -3,10 +3,10 @@ services:
   app:
     container_name: "app"
     volumes:
-      - ./:/code
+      - ./api:/app
     tty: true
     build:
-      context: .
+      context: api
       dockerfile: Dockerfile
     ports:
       - 3000:3000
@@ -24,3 +24,14 @@ services:
       - "MYSQL_DATABASE=app"
     ports:
       - "3306:3306"
+  front:
+    container_name: "front"
+    volumes:
+      - ./frontend:/app
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    command: "yarn run dev"
+
