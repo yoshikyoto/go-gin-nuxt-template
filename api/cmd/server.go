@@ -19,7 +19,7 @@ func Server() {
 	// ルーティングの設定より前に処理する必要がある
 	secret := env.GetAppSecret()
 	store := cookie.NewStore([]byte(secret))
-	engine.Use(sessions.Sessions("apply_app_session", store))
+	engine.Use(sessions.Sessions("my_app_session", store))
 
 	route.SetRoutes(engine)
 
